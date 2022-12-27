@@ -8,7 +8,7 @@ switch (num) {
     case 49:
         console.log('Incorrect');
         break;
-    case 50:
+    case 51:
         console.log('Exactly');
         break;
     default:
