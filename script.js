@@ -1,16 +1,14 @@
-"use strict"; // используется для использования последней версии языка
+const hamburger = 0;
+const fries = null;
+const cola = 0;
+const nuggets = 2;
 
-const num = 50;
-
-(num == 50) ? console.log('OK!') : console.log('Error');
-
-switch (num) {
-    case 49:
-        console.log('Incorrect');
-        break;
-    case 51:
-        console.log('Exactly');
-        break;
-    default:
-        console.log('Not this time');
+if(hamburger===3 && cola === 2 || fries ===3 && nuggets) {
+    console.log('Все сыты');
+} else {
+    console.log('Мы уходим');
 }
+
+let johnReport, alexReport, samReport, mariaReport = 'done';
+
+console.log(johnReport || alexReport || samReport || mariaReport);
