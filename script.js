@@ -1,14 +1,19 @@
-const hamburger = 0;
-const fries = null;
-const cola = 0;
-const nuggets = 2;
+let num = 51;
 
-if(hamburger===3 && cola === 2 || fries ===3 && nuggets) {
-    console.log('Все сыты');
-} else {
-    console.log('Мы уходим');
+// while (num < 55) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num < 55);
+
+for (let i = 1; i <= 10; i++) {
+    if(i == 6){
+        continue; //пропускает данное значение и проходит дальше по условию
+    }
+    console.log(i);
 }
-
-let johnReport, alexReport, samReport, mariaReport = 'done';
-
-console.log(johnReport || alexReport || samReport || mariaReport);
