@@ -1,10 +1,25 @@
-let result = '';
-const lines = 8;
+'use strict';
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-for (let i = 0; i < lines; i++) {
-    for (let j = 1; j < i; j++) {
-        result += '*' + 2;
+const personalMoviesDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+for (let i =0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMoviesDB.movies[a] = b;
+        console.log('done');
+    }else{
+        console.log('error');
+        i--;
     }
-    result += '\n';
+          
 }
-console.log(result);
+console.log(personalMoviesDB);
