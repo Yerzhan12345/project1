@@ -1,19 +1,10 @@
-for (let i = 0; i < 3; i++) {
-    console.log(i);
-    for (let j = 0; j < 3; j++) {
-        console.log(j);
-    }
-}
-
 let result = '';
-const lenght = 7;
+const lines = 8;
 
-for(let i = 1; i < lenght; i++) {
-
-    for(let j = 0; j < i; j++){
-        result += "*";
+for (let i = 0; i < lines; i++) {
+    for (let j = 1; j < i; j++) {
+        result += '*' + 2;
     }
     result += '\n';
 }
-
 console.log(result);
