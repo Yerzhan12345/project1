@@ -1,28 +1,25 @@
-const usdCurr = 28;
-const eurCurr = 32;
-const discount = 0.9; 
-
-function convert (amount, curr) {
-    return curr * amount; 
-}
-// желательно чтобы функция выполняла лишь одно действие. Типа как здесь возращала только значение, а выведение в консоль делалось в другом месте.
-function promotion(result) {
-    console.log(result * discount);
+function sayHello(name) {
+    return `Привет, ${name}`;
 }
 
-console.log(convert(500, usdCurr));
-convert(500, eurCurr);
+sayHello('Антон');
+sayHello('Андрей');
 
-promotion(convert(500, usdCurr)); // здесь мы можем использовать одну функцию для вызова другой.
+function returnNeighboringNumbers(number) {
+  return [number - 1, number, number + 1];
+}
 
-function test() {
-    for (let i = 0; i < 5; i++){
-        console.log(i);
-        if(i === 3) return // здесь используется данный return чтобы досрочно завершить программу.
+returnNeighboringNumbers(5);
+
+function getMathResult(num1, num2) {
+    let str = '';
+    for (let i = 1; i <= num2; i++) {
+        str += num1 * i + '---';
     }
-    console.log("done");
+    return str;
 }
-test();
 
-function diNothing() {}
-    console.log(diNothing() === undefined);
+console.log(getMathResult(5,4));
+
+
+
