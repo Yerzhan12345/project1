@@ -1,23 +1,14 @@
-"use strict"; 
+function fibonacci (a) {
+    let result = [0, 1];
 
-const str = "test";
+    
 
-console.log(str.toUpperCase()); // метод для большой буквы
-console.log(str);
+    for (let i = 2; i <= a; i++) {
+        const prevNum1 = result[i - 1];
+        const prevNum2 = result[i - 2];
+        result.push(prevNum1+prevNum2);
+    }
+    return result;
+}
 
-const fruit = "Some fruit";
-
-console.log(fruit.indexOf("fruit"));// показывает в каком месте находятся данные символы
-
-const logg = "Hello world";
-
-console.log(logg.substring(6, 11 )); //обрезка слова 
-console.log(logg.substr(6, 11 ));
-
-const num = 12.2;
-
-console.log(Math.round(num)); // метод округления до десятков
-
-const test = "12.2px";
-console.log(parseInt(test));// изменение типа данных с символа в int
-console.log(parseFloat(test));// изменение типа данных с символа во float
+console.log(fibonacci(100));
