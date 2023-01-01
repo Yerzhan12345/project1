@@ -1,25 +1,23 @@
-function sayHello(name) {
-    return `Привет, ${name}`;
-}
+"use strict"; 
 
-sayHello('Антон');
-sayHello('Андрей');
+const str = "test";
 
-function returnNeighboringNumbers(number) {
-  return [number - 1, number, number + 1];
-}
+console.log(str.toUpperCase()); // метод для большой буквы
+console.log(str);
 
-returnNeighboringNumbers(5);
+const fruit = "Some fruit";
 
-function getMathResult(num1, num2) {
-    let str = '';
-    for (let i = 1; i <= num2; i++) {
-        str += num1 * i + '---';
-    }
-    return str;
-}
+console.log(fruit.indexOf("fruit"));// показывает в каком месте находятся данные символы
 
-console.log(getMathResult(5,4));
+const logg = "Hello world";
 
+console.log(logg.substring(6, 11 )); //обрезка слова 
+console.log(logg.substr(6, 11 ));
 
+const num = 12.2;
 
+console.log(Math.round(num)); // метод округления до десятков
+
+const test = "12.2px";
+console.log(parseInt(test));// изменение типа данных с символа в int
+console.log(parseFloat(test));// изменение типа данных с символа во float
