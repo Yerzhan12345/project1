@@ -1,14 +1,20 @@
-function fibonacci (a) {
-    let result = [0, 1];
-
-    
-
-    for (let i = 2; i <= a; i++) {
-        const prevNum1 = result[i - 1];
-        const prevNum2 = result[i - 2];
-        result.push(prevNum1+prevNum2);
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
     }
-    return result;
+};
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object'){
+        for (let i in options[key]){
+            console.log(`Свойство ${i}, имеет значение ${options[key][i]} `);
+        }
+    } else {
+        console.log(`Свойство ${key}, имеет значение ${options[key]} `);
+    }
 }
 
-console.log(fibonacci(100));
