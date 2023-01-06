@@ -1,94 +1,99 @@
-let a = 5,
-    b = a;
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const {age} = plan;
+        const{languages} = plan.skills;
+        let str = `Мне ${age} и я владею языками: ${languages}`;
 
-b = b + 5;
+        languages.forEach(function(item, languages) {
+            str = str + `${languages.toUpperCase()}`;
+        });
+        return str;
+        }
+    } ;
 
-console.log(b);
-console.log(a);
+function showExperience(plan) {
+        const {exp} = plan.skills;
+        return exp;
+}
 
-const obj = {
-    a: 5,
-    b: 1
-};
+console.log(showExperience(personalPlanPeter));
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
 
-// const copy = obj; // передача ссылки
+function showProgrammingLangs(plan) {
+    let str = '';
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs) {
+        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+    }
 
-// copy.a = 10;
+    return str;
+}
 
-// console.log(copy);
-// console.log(obj);
+console.log(showProgrammingLangs(personalPlanPeter));
 
-function copy(mainObj) {
-    let objCopy = {};
+let user = { name: "John", years: 30 };
+
+let {name, years: age, isAdmin = false} = user;
+
+console.log( name ); // John
+console.log( age ); // 30
+console.log( isAdmin ); // false
+
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+  };
+
+  function maxSalary (salary) {
+    let
+  }
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    let message;
+    (arr.length === 0) ? message = 'Семья пуста' : message = 'Семья состоит из: ';
     
-    for (let key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
+    arr.forEach(value => {
+        message += `${value} `
+    });
+    return message;
 }
 
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
+console.log(showFamily(family));
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    let message;
+    
+    arr.forEach(value => {
+        console.log(value.toLowerCase())
+    }) ;
+}
+standardizeStrings(favoriteCities);
+
+const someString = 'This is some strange string';
+
+function reverse(str) { // данная функция возвращает принимаемую строку задом наперед
+    let stri = '';
+    let message = str.split('');
+    for (let i = message.length-1; i >= 0; i--) {
+        stri += `${message[i]}`;
+
     }
-};
-
-const newNumbers = copy(numbers);
-
-newNumbers.a = 10;
-console.log(newNumbers);
-console.log(numbers);
-
-const add = {
-    d: 17,
-    e: 20
-};
-
-// console.log(Object.assign(numbers, add));
-
-const clone = Object.assign({}, add);
-
-clone.d = 20;
-
-console.log(add);
-console.log(clone);
-
-const oldArray = ['a', 'b', 'c'];
-const newArray = oldArray.slice();
-
-newArray[1] = 'asasas';
-
-console.log(oldArray);
-console.log(newArray);
-
-const video = ['youtube', 'vimeo', 'rutube'],
-      blogs = ['wordpress', 'livejournal', 'blogger'],
-      internet = [...video, ...blogs, 'vk', 'facebook'];
-
-console.log(internet); // используем троеточие чтобы скопировать данные с одного массива и вставить его в другое.
-
-function log(a, b, c) {
-    console.log(a);
-    console.log(b);
-    console.log(c);
+    return stri;
 }
 
-const num = [2, 5, 7]
-
-log(...num); // можно даже передать массив состоящий из трех значений в функцию с тремя аргументами.
-
-const array = ["a", "b"];
-const newAaray = [...array];
-
-const q = {
-    one: 1,
-    two: 2
-};
-
-const newObj = {...q};
-
-console.log(newObj);
-console.log(newAaray);
+console.log(reverse(someString));
