@@ -1,40 +1,32 @@
-"use strict";
+// let number = 5; debugger
 
-console.log(typeof(String(null)));
-console.log(typeof(String(4))); // Как поменять тип данных
+// function logNumber() {
+   
+//     console.log(number);
+// }
 
-const num = 5;
+// number = 6;
 
-console.log("https://vk.com/catalog/" + num);
+// logNumber();
 
-const fontSize = 26 + 'px';
+// number = 8;
 
-// To Number
-//1)
-console.log(typeof(Number('4')));
+// logNumber();
 
-console.log(typeof(+'5'));
+function createCounter () {
+    let counter = 0;
 
-console.log(typeof(parseInt("15px", 10)));
-
-let answ = +prompt("Hello", "");
-
-//To boolean
-
-// 0, '', null, undefined, NaN; always false
-
-let switcher = null;
-
-if(switcher) {
-    console.log('Working...');
+    const myFunction = function () {
+        counter = counter + 1;
+        return counter;
+    }
+    return myFunction;
 }
 
-switcher = 1;// мы можем поменять значение null на 1. Означает правду.
+const increment = createCounter();
+const c1 = increment(); // сначала в функцией возвращается значение 1
+const c2 = increment(); // при вызове функции во второй раз уже новой переменной c2, функция increment помнит значение с прошлого counter = 1;
+const c3 = increment(); // при вызове функции в третий раз уже новой переменной c3, функция increment помнит значение с прошлого counter = 2;
 
-if(switcher) {
-    console.log('Working...');
-}
+console.log(c1, c2, c3); // в консоль выводится значение 1 2 3
 
-//Как поменять строчную на boolean
-
-console.log(typeof(!!"4444"));
