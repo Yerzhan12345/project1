@@ -1,32 +1,22 @@
-// let number = 5; debugger
 
-// function logNumber() {
-   
-//     console.log(number);
-// }
 
-// number = 6;
+// console.log([] + false - null + true); NaN - пустой массив всегда будет значение string.
+// [] + false = false, then + null = NaN, then NaN + true = NaN
 
-// logNumber();
+// console.log([] + 1 + 2); '12' строка + 1 = "1", "1" + "2" = 12
 
-// number = 8;
+// alert ("1"[0]);  "1", так как к строке можно обратиться через ее элемент как к массиву.
 
-// logNumber();
+// console.log(2 && 1 && null && 0 && undefined); null
+// и запинается на лжи, тоесть здесь 2 и 1 это true, след идет null значит здесь код остановливается и выдает в консоль null.
 
-function createCounter () {
-    let counter = 0;
+// console.log(!! (1 && 2) === (1 && 2)); "false", так как !! вернет нам boolean значение
 
-    const myFunction = function () {
-        counter = counter + 1;
-        return counter;
-    }
-    return myFunction;
-}
+// console.log(( null || 2 && 3 || 4 )); && по приоритету выще ||, так что 2 && 3 = 3, null || 3 = 3, 3 || 4 = 3; Answer: 3;
 
-const increment = createCounter();
-const c1 = increment(); // сначала в функцией возвращается значение 1
-const c2 = increment(); // при вызове функции во второй раз уже новой переменной c2, функция increment помнит значение с прошлого counter = 1;
-const c3 = increment(); // при вызове функции в третий раз уже новой переменной c3, функция increment помнит значение с прошлого counter = 2;
+// const a = [1, 2, 3], b = [1, 2, 3]; 
+// console.log(a === b); false, так как это разные массивы, разные хранилища информации.
 
-console.log(c1, c2, c3); // в консоль выводится значение 1 2 3
+// console.log(+"Infinity"); значение будет Infinity но тип данных будет Number;
 
+// console.log(0 || "" || 2 || undefined || true || false); ответ будет 2, так как лог значение || запинается на правде. 0 - false, "" - false, 2 - true;
