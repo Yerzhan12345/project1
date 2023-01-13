@@ -1,53 +1,76 @@
-let t = 0;
+let students = {
+    js: [{
+        name: 'John',
+        progress: 100
+    },{
+        name: 'Ivan',
+        progress: 60
+    }],
 
-function f1 (){
-    t++;
-    console.log(t);
+    html: {
+        basic: [{
+            name: 'Peter',
+            progress: 20
+        }, {
+            name: 'Ann',
+            progress: 18    
+        }],
 
-}
-
-// f1();
-
-// цикл
-
-function f2() {
-    let out = '';
-    for(let i = 1; i<=200; i++){
-        out += i + ' ';
+        pro: [{
+            name: 'Sam',
+            progress: 10
+        }]
     }
-    console.log (out);
+};
+
+function getTotalProgressByIteration(data) {
+    let total = 0;
+    let students = 0;
+
+    for (let course of Object.values(data)) {
+        if (Array.isArray(course)) {
+            students += course.length;
+
+            for (let i = 0; i < course.length; i++) {
+                total += course[i].progress;
+            } 
+            } else{
+                for (let subCourse of Object.values(course)) {
+                    students += subCourse.length;
+
+                    for(let i = 0; i < subCourse.length; i++) {
+                        total +=subCourse[i].progress;
+                    }
+                }
+            }
+        }
+
+        return total / students;
+    }
+
+    console.log(getTotalProgressByIteration(students));
+
+function getTotalProgressByRecursion(data) {
+    if (Array.isArray(data)) {
+        let total = 0;
+
+        for (let i = 0; i < data.length; i++) {
+            total += data[i].progress;
+        }
+        return [total, data.length];
+    } else {
+        let total = [0, 0];
+
+        for (let subData of Object.values(data)) {
+            const subDataArr = getTotalProgressByRecursion(subData);
+            total[0] +=subDataArr[0];
+            total[1] +=subDataArr[1];
+        }
+
+        return total;
+    }
 }
 
-// f2();
+const result = getTotalProgressByRecursion(students);
 
-//рекурсия
-let i = 0;
-let out = '';
-
-function f3 () {
-    i++;
-    out += i + ' ';
-    if(i > 30) return;
-    f3();
-}
-// f3();
-// console.log(out);
-
-// лицо с низкой социальной ответственностью
-
-function randomInteger(min, max) {
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-}
-
-let s1 = 0;
-function moneyRecursion() {
-    let m = randomInteger(1, 100);
-    console.log('add: ' + m);
-    s1+=m;
-    console.log('sum: ' + s1);
-    if(s1 > 10000) return;
-    moneyRecursion();
-}
-
-moneyRecursion();
+console.log(result[0] / result[1]);
