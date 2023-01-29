@@ -1,22 +1,22 @@
-//map
+//filter
 //does return new array
-//does not change a size of original array
-//uses values from original array
+//can manipulate the size of new array
+//returns based in condtion
 
 const people = [
     {name: 'bob', age: 20, position: 'developer'},
     {name: 'marina', age: 23, position: 'manager'},
     {name: 'alex', age: 30, position: 'CEO'},
+    {name: 'anna', age: 35, position: 'accountant'},
 ];
 
-const ages = people.map(function (person) {
-    return person.age;
-});
-const newPeople = people.map(function(person){
-    return{
-        firstName:person.name,
-        oldAge: person.age
-    };
-});
+const youngPeople = people.filter(function(person){
+    return person.age <= 25;
+})
 
-console.log(newPeople);
+const developers = people.filter(function(person){
+    return person.position === 'developer';
+})
+
+console.log(youngPeople);
+console.log(developers);
