@@ -1,42 +1,22 @@
-const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-];
+//getelementById('element')
 
-const days = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
-];
+// const h1 = document.getElementById('title');
+// h1.style.color = 'red';
 
-const date = new Date();
+// document.getElementById('btn').style.backgroundColor = 
+// 'green';
 
-const month = date.getMonth();
-console.log(months[month]);
+// const listItems = document.querySelector('#result');
+// listItems.style.backgroundColor = 'white';
 
-const day = date.getDay();
-console.log(days[day]);
+// const lastItem = document.querySelector('li:last-child');
+// lastItem.style.color = 'red';
 
-console.log(date.getDate());
-console.log(date.getFullYear());
+const list = document.querySelectorAll('.list');
 
-const sentence = `${days[day]}, ${date.getDate()}, ${
-    months[month]
-}, ${date.getFullYear()}`;
+// list.forEach(function(element) {
+//     element.style.color = 'red';
+// })
 
-console.log(sentence);
-document.body.innerHTML = sentence;
+const result = document.querySelector('#result');
+const children = result.children;
